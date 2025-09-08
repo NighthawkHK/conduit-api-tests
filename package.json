@@ -1,5 +1,6 @@
 {
   "name": "conduit-api-tests",
+  "author": "Maksym Vovk <vovk4work@gmail.com>",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {},
