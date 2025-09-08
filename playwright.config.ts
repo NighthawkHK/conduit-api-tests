@@ -12,7 +12,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://conduit-api.learnwebdriverio.com',
+    baseURL: process.env.API_URL,
     trace: 'on-first-retry',
   },
 });
