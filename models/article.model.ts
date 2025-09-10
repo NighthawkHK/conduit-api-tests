@@ -1,23 +1,17 @@
 export interface ArticleResponse {
-    article: Article;
+    article: ArticleInfo;
 }
 
 export interface ArticleRequest {
-    article: {
-        author?: {};
-        title: string;
-        description: string;
-        body: string;
-        tagList?: [];
-    }
+    article: Article;
 }
 
 export interface ArticlesResponse {
-    articles: Article[];
+    articles: ArticleInfo[];
     articlesCount: number;
 }
 
-interface Article {
+export interface ArticleInfo {
     slug: string;
     title: string;
     description: string;
@@ -30,7 +24,15 @@ interface Article {
     author: Author;
 }
 
-interface Author {
+export interface Article {
+    author: Record<string, string>;
+    title: string;
+    description: string;
+    body: string;
+    tagList: string[];
+}
+
+export interface Author {
     username: string;
     image: string;
     bio?: string;

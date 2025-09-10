@@ -30,13 +30,10 @@ export const conduitTest = base.extend<ConduitFixture>({
     userToken: async ({ client }, use) => {
         let token: string;
         const tokenFilePath = '.token';
-        const email = process.env.USER_EMAIL as string;
-        const password = process.env.USER_PASSWORD as string;
+        const { email, password, username } = UserFactory.createEnvUser();
         
         const registerAndSaveToken = async () => {
-            const responseBody = await client.user.register({
-                user: UserFactory.createEnvUser()
-            });
+            const responseBody = await client.user.register(email, password, username);
             const token = responseBody.user.token;
             fs.writeFileSync(tokenFilePath, token);
             return token;
@@ -44,10 +41,8 @@ export const conduitTest = base.extend<ConduitFixture>({
 
         if (fs.existsSync(tokenFilePath)) {
             token = fs.readFileSync(tokenFilePath, { encoding: 'utf-8' });
-            const { response } = await client.user.login({
-                user: { email, password }
-            });
-            if (!response.ok()) {
+            const { isSuccessful } = await client.user.login(email, password);
+            if (!isSuccessful) {
                 fs.unlinkSync(tokenFilePath);
                 token = await registerAndSaveToken();
             }

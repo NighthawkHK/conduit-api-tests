@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { randomUUID } from 'crypto';
+import env from '../../../env';
 
 export class UserFactory {
     
@@ -13,9 +14,9 @@ export class UserFactory {
 
     static createEnvUser() {
         return {
-            email: process.env.USER_EMAIL as string,
-            password: process.env.USER_PASSWORD as string,
-            username: process.env.USER_NAME as string,
+            email: env.USER_EMAIL,
+            password: env.USER_PASSWORD,
+            username: env.USER_USERNAME
         }
     }
 }

@@ -1,5 +1,5 @@
 export const Tag = {
-    Smoke: '@NotForSafari',
-    Article: '@Smoke',
+    Smoke: '@Smoke',
+    Article: '@Article',
     User: '@User',
 }

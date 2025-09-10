@@ -1,24 +1,13 @@
-export interface SignUpRequest {
-    user: {
-        email: string,
-        password: string,
-        username: string,
-    }
-}
+import { ErrorResponse } from './error.model';
 
-export interface SignInRequest {
-    user: {
-        email: string,
-        password: string,
-    }
+export interface SignInUser {
+    username: string,
+    email: string,
+    token: string,
 }
 
 export interface UserResponse {
-    user: {
-        username: string,
-        email: string,
-        token: string,
-    }
+    user: SignInUser;
 }
 
 export interface EditUserRequest {
@@ -28,3 +17,5 @@ export interface EditUserRequest {
     image?: string,
     password?: string
 }
+
+export type RegisterResponse = UserResponse | ErrorResponse;

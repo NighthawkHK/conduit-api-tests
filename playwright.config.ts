@@ -1,8 +1,6 @@
+import 'dotenv/config';
+import env from './env';
 import { defineConfig } from '@playwright/test';
-import dotenv from 'dotenv';
-import path from 'path';
-
-dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 export default defineConfig({
   testDir: './tests',
@@ -12,7 +10,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: process.env.API_URL,
+    baseURL: env.API_URL,
     trace: 'on-first-retry',
   },
 });

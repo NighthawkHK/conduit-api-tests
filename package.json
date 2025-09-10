@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "regress": "playwright test",
+    "smoke": "playwright test --grep @Smoke",
+    "articles": "playwright test --grep @Article"
   },
   "keywords": [],
   "author": "Maksym Vovk <vovk4work@gmail.com>",
@@ -16,6 +18,7 @@
   },
   "dependencies": {
     "dotenv": "^17.2.1",
+    "envalid": "^8.1.0",
     "joi": "^18.0.1"
   }
 }

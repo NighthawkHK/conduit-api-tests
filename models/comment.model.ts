@@ -3,4 +3,3 @@ export interface CommentResponse {
     createdAt: string;
     author: string;
 }
-
