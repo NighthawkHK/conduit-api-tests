@@ -33,6 +33,8 @@ playwright.config.ts# Playwright configuration
    ```
 
 ### Running Tests
+This project requires some system variables in order to run tests. Please see env/index.ts for additional details.
+
 To execute all tests:
 ```powershell
 npm run regress
