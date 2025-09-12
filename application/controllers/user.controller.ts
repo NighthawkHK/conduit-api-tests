@@ -1,4 +1,4 @@
-import { UserResponse, RegisterResponse } from "../../models/user.model";
+import { UserResponse } from "../../models/user.model";
 import { RequestHolder } from "../requestHolder";
 import { step } from "../../utils/step";
 
@@ -18,12 +18,12 @@ export class UserController extends RequestHolder {
     }
 
     @step('Register user with email: {0}, username: {2}')
-    async register(email: string, password: string, username: string): Promise<RegisterResponse> {
+    async register(email: string, password: string, username: string): Promise<UserResponse> {
         const response = await this.request.post(this.endpoint, {
             data: {
                 user: { email, password, username }
             },
         });
-        return response.json() as Promise<RegisterResponse>;
+        return response.json() as Promise<UserResponse>;
     }
 }

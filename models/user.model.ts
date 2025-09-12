@@ -1,5 +1,3 @@
-import { ErrorResponse } from './error.model';
-
 export interface SignInUser {
     username: string,
     email: string,
@@ -17,5 +15,3 @@ export interface EditUserRequest {
     image?: string,
     password?: string
 }
-
-export type RegisterResponse = UserResponse | ErrorResponse;
