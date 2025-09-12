@@ -40,7 +40,7 @@ To execute all tests:
 npm run regress
 ```
 
-To run tests by module please see the scripts section in package.json.
+To run tests by module please take a look at existing scripts in package.json.
 
 ### Viewing Reports
 After running tests, view the HTML report:
