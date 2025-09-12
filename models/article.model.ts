@@ -2,10 +2,6 @@ export interface ArticleResponse {
     article: ArticleInfo;
 }
 
-export interface ArticleRequest {
-    article: Article;
-}
-
 export interface ArticlesResponse {
     articles: ArticleInfo[];
     articlesCount: number;

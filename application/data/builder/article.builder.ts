@@ -35,7 +35,7 @@ export class ArticleBuilder {
 
     build(): Article {
         if (!this._title) {
-            throw new Error('Article must have title');
+            throw new Error('Article must have some title');
         }
         return {
             author: this._author,

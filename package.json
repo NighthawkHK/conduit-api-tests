@@ -5,7 +5,8 @@
   "scripts": {
     "regress": "playwright test",
     "smoke": "playwright test --grep @Smoke",
-    "articles": "playwright test --grep @Article"
+    "articles": "playwright test --grep @Article",
+    "user": "playwright test --grep @User"
   },
   "keywords": [],
   "author": "Maksym Vovk <vovk4work@gmail.com>",
