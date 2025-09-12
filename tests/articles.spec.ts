@@ -25,7 +25,6 @@ const testData = [
             .build(),
     },
 ]
-
 let articleSlug: string;
 
 conduitTest.afterEach(async ({ authClient: { article } }) => {
@@ -39,6 +38,7 @@ for (const { articleEntity } of testData) {
     conduitTest(`should successfully create an article with title ${articleEntity.title}`, async ({ authClient: { article } }) => {
         const responseBody = await article.create(articleEntity);
         articleSlug = responseBody.article.slug;
+        
         expect(responseBody).toMatchObject({
             article: {
                 slug: expect.any(String),
