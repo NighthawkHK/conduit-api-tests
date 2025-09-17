@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { randomUUID } from 'crypto';
-import env from '../../../env';
+import env from '../../env';
 
 export class UserFactory {
     
@@ -20,4 +20,3 @@ export class UserFactory {
         }
     }
 }
-

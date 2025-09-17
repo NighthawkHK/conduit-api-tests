@@ -22,8 +22,9 @@ export class ArticlesController extends RequestHolder {
     }
 
     @step('Delete article with slug: {0}')
-    async delete(slug: string) {
-        return this.request.delete(`${this.endpoint}/${slug}`);
+    async delete(slug: string): Promise<boolean> {
+        const response = await this.request.delete(`${this.endpoint}/${slug}`);
+        return response.ok();
     }
 
     @step('Get article with slug: {0}')

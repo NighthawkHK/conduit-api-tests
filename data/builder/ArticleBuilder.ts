@@ -1,4 +1,4 @@
-import { Article } from "../../../models/article.model";
+import { Article } from "../../models/article.model";
 
 export class ArticleBuilder {
     private article: Partial<Article> = {}

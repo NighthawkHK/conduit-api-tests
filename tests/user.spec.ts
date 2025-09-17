@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { UserFactory } from '../application/data/factory/UserFactory';
+import { UserFactory } from '../data/factory/UserFactory';
 import { conduitTest } from '../fixtures/lazy.fixture';
 import { Tag } from '../application/tags';
 import { faker } from '@faker-js/faker';

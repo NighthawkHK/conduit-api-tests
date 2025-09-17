@@ -1,12 +1,14 @@
 import { request, test as base } from "@playwright/test";
 import { Client } from "../application/Client";
 import fs from 'fs';
-import { UserFactory } from "../application/data/factory/UserFactory";
+import { UserFactory } from "../data/factory/UserFactory";
+import { ArticleBuilder } from "../data/builder/ArticleBuilder";
 
 type ConduitFixture = {
     client: Client;
     authClient: Client;
     userToken: string;
+    articleSlug: string;
 }
 
 export const conduitTest = base.extend<ConduitFixture>({
@@ -30,7 +32,7 @@ export const conduitTest = base.extend<ConduitFixture>({
         let token: string;
         const tokenFilePath = '.token';
         const { email, password, username } = UserFactory.createEnvUser();
-        
+
         const registerAndSaveToken = async () => {
             const responseBody = await client.user.register(email, password, username);
             const token = responseBody.user.token;
@@ -50,4 +52,15 @@ export const conduitTest = base.extend<ConduitFixture>({
         }
         await use(token);
     },
+
+    articleSlug: async ({ authClient }, use) => {
+        const responseBody = await authClient.article.create(
+            new ArticleBuilder()
+                .setTitle('Article to be deleted')
+                .build()
+        );
+        const slug = responseBody.article.slug;
+        await use(slug);
+        await authClient.article.delete(slug);
+    }
 })
