@@ -1,48 +1,43 @@
 import { Article } from "../../../models/article.model";
 
 export class ArticleBuilder {
-
-    private _author: Record<string, string> = {};
-    private _title = '';
-    private _description = '';
-    private _body = '';
-    private _tagList: string[] = [];
+    private article: Partial<Article> = {}
 
     setAuthor(author: Record<string, string>): this {
-        this._author = author;
+        this.article.author = author;
         return this;
     }
 
     setTitle(title: string): this {
-        this._title = title;
+        this.article.title = title;
         return this;
     }
 
     setDescription(description: string): this {
-        this._description = description;
+        this.article.description = description;
         return this;
     }
 
     setBody(body: string): this {
-        this._body = body;
+        this.article.description = body;
         return this;
     }
 
     setTagList(tagList: string[]): this {
-        this._tagList = tagList;
+        this.article.tagList = tagList;
         return this;
     }
 
     build(): Article {
-        if (!this._title) {
+        if (!this.article.title) {
             throw new Error('Article must have some title');
         }
         return {
-            author: this._author,
-            title: this._title,
-            description: this._description,
-            body: this._body,
-            tagList: this._tagList,
+            author: this.article.author || {},
+            title: this.article.title,
+            description: this.article.description || '',
+            body: this.article.body || '',
+            tagList: this.article.tagList || [],
         }
     }
 }

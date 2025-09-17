@@ -1,9 +1,8 @@
 import { Article, ArticleResponse } from "../../models/article.model";
 import { step } from "../../utils/step";
-import { RequestHolder } from "../requestHolder";
+import { RequestHolder } from "../RequestHolder";
 
 export class ArticlesController extends RequestHolder {
-
     private readonly endpoint = '/api/articles';
 
     @step('Create new article')

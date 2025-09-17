@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 import { conduitTest } from "../fixtures/lazy.fixture";
-import { ArticleBuilder } from "../application/data/builder/article.builder";
+import { ArticleBuilder } from "../application/data/builder/ArticleBuilder";
 import { faker } from "@faker-js/faker";
 
 const testData = [

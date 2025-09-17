@@ -1,7 +1,7 @@
 import { request, test as base } from "@playwright/test";
 import { Client } from "../application/Client";
 import fs from 'fs';
-import { UserFactory } from "../application/data/factory/user.factory";
+import { UserFactory } from "../application/data/factory/UserFactory";
 
 type ConduitFixture = {
     client: Client;
@@ -10,7 +10,6 @@ type ConduitFixture = {
 }
 
 export const conduitTest = base.extend<ConduitFixture>({
-
     client: async ({ request }, use) => {
         const client = new Client(request);
         await use(client);

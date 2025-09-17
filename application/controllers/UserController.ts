@@ -1,9 +1,8 @@
 import { UserResponse } from "../../models/user.model";
-import { RequestHolder } from "../requestHolder";
+import { RequestHolder } from "../RequestHolder";
 import { step } from "../../utils/step";
 
 export class UserController extends RequestHolder {
-
     private readonly endpoint = '/api/users';
 
     @step('Login user with email: {0}')

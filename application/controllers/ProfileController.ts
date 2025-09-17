@@ -1,10 +1,9 @@
 import { Profile } from "../../models/profile.model";
 import { EditUserRequest } from "../../models/user.model";
 import { step } from "../../utils/step";
-import { RequestHolder } from "../requestHolder";
+import { RequestHolder } from "../RequestHolder";
 
 export class ProfileController extends RequestHolder {
-
     private readonly endpoint = '/api/user';
 
     @step('Edit user profile')

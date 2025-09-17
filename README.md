@@ -18,7 +18,7 @@ playwright.config.ts# Playwright configuration
 
 ## Getting Started
 ### Prerequisites
-- Node.js (v16 or higher recommended)
+- Node.js (v24 or higher recommended)
 - npm
 
 ### Installation

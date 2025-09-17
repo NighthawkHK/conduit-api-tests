@@ -1,7 +1,7 @@
-import { RequestHolder } from "./requestHolder";
-import { ArticlesController } from "./controllers/article.controller";
-import { ProfileController } from "./controllers/profile.controller";
-import { UserController } from "./controllers/user.controller";
+import { RequestHolder } from "./RequestHolder";
+import { ArticlesController } from "./controllers/ArticleController";
+import { ProfileController } from "./controllers/ProfileController";
+import { UserController } from "./controllers/UserController";
 
 export class Client extends RequestHolder {
 
