@@ -8,6 +8,10 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      USER_EMAIL: ${{ vars.USER_EMAIL }}
+      USER_PASSWORD: ${{ vars.USER_PASSWORD }}
+      USER_USERNAME: ${{ vars.USER_USERNAME }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
